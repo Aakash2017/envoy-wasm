@@ -1,4 +1,4 @@
-When creating an Envoy pull request (PR) the text box will automatically be filled
+ When creating an Envoy pull request (PR) the text box will automatically be filled
 in with the basic fields from the [pull request template](PULL_REQUEST_TEMPLATE.md). The following
 is a more detailed explanation of what should go in each field.
 
