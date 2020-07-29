@@ -21,7 +21,7 @@ cc_library(
         ],
         exclude = ["src/**/wavm*"],
     ),
-    copts = ["-std=c++14"],
+    copts = ["-std=c++17"],
     deps = [
         ":include",
         "//external:abseil_flat_hash_map",
