@@ -117,7 +117,7 @@ TEST_P(WasmCommonContextTest, OnStat) {
   duration_total.used_ = true;
   snapshot_.gauges_.push_back(duration_total);
 
-  context_->onStat(snapshot_);
+  context_->onStatsUpdate(snapshot_);
 }
 
 } // namespace Wasm

@@ -16,7 +16,7 @@ class TestContext : public EnvoyContext {
 public:
   explicit TestContext(uint32_t id, RootContext* root) : EnvoyContext(id, root) {}
 
-  void onStat(uint32_t result_size) override;
+  void onStatsUpdate(uint32_t result_size) override;
 };
 
 class TestRootContext : public EnvoyRootContext {
@@ -29,7 +29,7 @@ public:
 static RegisterContextFactory register_TestContext(CONTEXT_FACTORY(TestContext),
                                                    ROOT_FACTORY(TestRootContext));
 
-void TestContext::onStat(uint32_t result_size) {
+void TestContext::onStatsUpdate(uint32_t result_size) {
   logWarn("TestContext::onStat");
   auto stats_buffer = getBufferBytes(WasmBufferType::CallData, 0, result_size);
   auto stats = parseStatResults(stats_buffer->view());

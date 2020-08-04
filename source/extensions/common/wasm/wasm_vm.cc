@@ -50,10 +50,10 @@ bool EnvoyWasmVmIntegration::getNullVmFunction(absl::string_view function_name, 
           // Need to add a new API header available to both .wasm and null vm targets.
           auto context_base = plugin->getContextBase(context_id);
           if (auto root = context_base->asRoot()) {
-            static_cast<proxy_wasm::null_plugin::EnvoyRootContext*>(root)->onStat(result_size);
+            static_cast<proxy_wasm::null_plugin::EnvoyRootContext*>(root)->onStatsUpdate(result_size);
           } else {
             static_cast<proxy_wasm::null_plugin::EnvoyContext*>(context_base->asContext())
-                ->onStat(result_size);
+                ->onStatsUpdate(result_size);
           }
         };
     return true;

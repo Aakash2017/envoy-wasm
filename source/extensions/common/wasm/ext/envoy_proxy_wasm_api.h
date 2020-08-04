@@ -6,7 +6,7 @@ public:
   virtual ~EnvoyContextBase() = default;
 
   virtual void onResolveDns(uint32_t /* token */, uint32_t /* result_size */) {}
-  virtual void onStat(uint32_t /* result_size */) {}
+  virtual void onStatsUpdate(uint32_t /* result_size */) {}
 };
 
 class EnvoyRootContext : public RootContext, public EnvoyContextBase {
